@@ -14,7 +14,9 @@ fetch(url)
       .then(data => {
         console.log(data)
 
-        document.querySelector('#cryptoPrice').textContent = `${data.symbol} is currently worth $ ${Number(data.price).toFixed(2)} per coin`
+        Number(data.price) < .2 ? Number(data.price) : Number(data.price).toFixed(2)
+
+        document.querySelector('#cryptoPrice').textContent = `${data.symbol} is currently worth $ ${Number(data.price)} per coin`
         
        
       })
